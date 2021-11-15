@@ -20,6 +20,7 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+version: 2.1
 workflows:
   Tutut-workflow:
     jobs:
@@ -29,4 +30,4 @@ jobs:
     machine: true
     resource_class: 2xlarge
     steps:
-      - run: echo "Hi I'm on Tukimen!"
+      - run: echo "Hi I'm on Tutut!"
