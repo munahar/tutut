@@ -20,14 +20,7 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-version: 2.1
-jobs:
-  build:
-    machine: true
-    resource_class: 2xlarge
-      image: buildpack-deps:trusty
-    steps:
-      - checkout
-      - run:
-          name: "Testing"
-          command: echo "Hi"
+workflows:
+  Testing-workflow:
+    jobs:
+      - Testing
