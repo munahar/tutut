@@ -25,14 +25,5 @@ jobs:
     machine: true
       image: ubuntu-2004:202010-01 # recommended linux image
     resource_class: 2xlarge
-    steps: 
-workflows:
-  testing:
-    jobs:
-      - runner
-jobs:
-  runner:
-    machine: true
-    resource_class: your-namespace/your-resource
     steps:
       - run: echo "Hi I'm on Runners!"
